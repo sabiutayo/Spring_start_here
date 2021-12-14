@@ -14,8 +14,10 @@ public class Main {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(ProjectConfiguration.class);
         var service = context.getBean(CommentService.class);
-        String value = service.publishComment(new Comment().setText("Demo comment").setAuthor("Natasha"));
+        var comment = new Comment().setText("Demo comment").setAuthor("Natasha");
+        service.publishComment(comment);
+        service.deleteComment(comment);
+        service.editComment(comment);
 
-        logger.info(value);
     }
 }
