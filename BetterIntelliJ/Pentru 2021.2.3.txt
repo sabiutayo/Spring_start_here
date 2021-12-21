@@ -1,0 +1,2 @@
+Adauga -javaagent  in
+c:\Users\User 7\AppData\Roaming\JetBrains\IntelliJIdea2021.2\idea64.exe.vmoptions
