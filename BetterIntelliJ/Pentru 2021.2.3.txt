@@ -1,2 +1,4 @@
 Adauga -javaagent  in
 c:\Users\User 7\AppData\Roaming\JetBrains\IntelliJIdea2021.2\idea64.exe.vmoptions
+
+-javaagent:d:\KITURI\JAva\BetterIntelliJ\BetterIntelliJ-1.20.jar
