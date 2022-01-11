@@ -1,8 +1,11 @@
-package spring_start_here.sq_ch13_ex1.model;
+package spring_start_here.sq_ch14_ex1.model;
+
+import org.springframework.data.annotation.Id;
 
 import java.math.BigDecimal;
 
 public class Account {
+    @Id
     private int id;
     private String name;
     private BigDecimal amount;

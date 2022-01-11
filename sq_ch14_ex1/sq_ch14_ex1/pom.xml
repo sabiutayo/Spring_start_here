@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>spring_start_here</groupId>
-    <artifactId>sq_ch13_ex1</artifactId>
+    <artifactId>sq_ch14_ex1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sq_ch13_ex1</name>
+    <name>sq_ch14_ex1</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
@@ -20,6 +20,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
         </dependency>
 
         <dependency>

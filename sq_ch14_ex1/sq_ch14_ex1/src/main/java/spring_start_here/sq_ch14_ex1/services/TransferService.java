@@ -1,9 +1,10 @@
-package spring_start_here.sq_ch13_ex1.services;
+package spring_start_here.sq_ch14_ex1.services;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import spring_start_here.sq_ch13_ex1.model.Account;
-import spring_start_here.sq_ch13_ex1.repositories.AccountRepository;
+import spring_start_here.sq_ch14_ex1.exceptions.AccountNotFoundException;
+import spring_start_here.sq_ch14_ex1.model.Account;
+import spring_start_here.sq_ch14_ex1.repositories.AccountRepository;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -19,9 +20,9 @@ public class TransferService {
     @Transactional
     public void transferMoney(long senderAccountId, long receiverAccountId, BigDecimal amount) {
         Account sender = accountRepository
-                .findAccountById(senderAccountId);
+                .findById(senderAccountId).orElseThrow(() -> new AccountNotFoundException());
         Account receiver = accountRepository
-                .findAccountById(receiverAccountId);
+                .findById(receiverAccountId).orElseThrow(() -> new AccountNotFoundException());
         BigDecimal senderNewAmount = sender.getAmount().subtract(amount);
         BigDecimal receiverNewAmount = receiver.getAmount().add(amount);
         accountRepository.changeAmount(senderAccountId, senderNewAmount);
@@ -29,7 +30,14 @@ public class TransferService {
 
     }
 
-    public List<Account> getAccounts() {
-        return accountRepository.findAllAccounts();
+    public Iterable<Account> getAllAccounts() {
+        return accountRepository.findAll();
+    }
+
+    public List<Account> getAccountsByName(String name) {
+        return accountRepository.findAccountsByName(name);
+    }
+    public List<Account> getAccountsByNameIsNot(String name, Long id){
+       return accountRepository.findByNameAndId(name, id);
     }
 }

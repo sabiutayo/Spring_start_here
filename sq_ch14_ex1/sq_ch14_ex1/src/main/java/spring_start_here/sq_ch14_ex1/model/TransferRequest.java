@@ -1,4 +1,4 @@
-package spring_start_here.sq_ch13_ex1.model;
+package spring_start_here.sq_ch14_ex1.model;
 
 import java.math.BigDecimal;
 

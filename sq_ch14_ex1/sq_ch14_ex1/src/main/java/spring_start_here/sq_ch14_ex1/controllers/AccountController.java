@@ -1,12 +1,9 @@
-package spring_start_here.sq_ch13_ex1.controllers;
+package spring_start_here.sq_ch14_ex1.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import spring_start_here.sq_ch13_ex1.model.Account;
-import spring_start_here.sq_ch13_ex1.model.TransferRequest;
-import spring_start_here.sq_ch13_ex1.services.TransferService;
+import org.springframework.web.bind.annotation.*;
+import spring_start_here.sq_ch14_ex1.model.Account;
+import spring_start_here.sq_ch14_ex1.model.TransferRequest;
+import spring_start_here.sq_ch14_ex1.services.TransferService;
 
 import java.util.List;
 
@@ -25,9 +22,17 @@ public class AccountController {
     }
 
     @GetMapping("/accounts")
-    public List<Account> getAccounts() {
-        return transferService.getAccounts();
+    public Iterable<Account> getAccounts(@RequestParam(required = false) String name) {
+        if (name == null) {
+            return transferService.getAllAccounts();
+        } else {
+            return transferService.getAccountsByName(name);
+        }
     }
 
+    @GetMapping("/acc")
+    public List<Account> getAccount(@RequestParam String name, @RequestParam Long id) {
+        return transferService.getAccountsByNameIsNot(name, id);
+    }
 
 }

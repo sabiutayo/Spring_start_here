@@ -1,10 +1,10 @@
-package spring_start_here.sq_ch13_ex1;
+package spring_start_here.sq_ch14_ex1;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SqCh13Ex1ApplicationTests {
+class SqCh14Ex1ApplicationTests {
 
     @Test
     void contextLoads() {

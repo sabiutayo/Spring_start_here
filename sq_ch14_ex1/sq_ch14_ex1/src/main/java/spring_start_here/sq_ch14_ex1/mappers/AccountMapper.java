@@ -1,7 +1,7 @@
-package spring_start_here.sq_ch13_ex1.mappers;
+package spring_start_here.sq_ch14_ex1.mappers;
 
 import org.springframework.jdbc.core.RowMapper;
-import spring_start_here.sq_ch13_ex1.model.Account;
+import spring_start_here.sq_ch14_ex1.model.Account;
 
 import java.math.BigDecimal;
 import java.sql.ResultSet;
